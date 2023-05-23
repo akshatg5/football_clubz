@@ -1,0 +1,85 @@
+* {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+p {
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+}
+
+#banner {
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+}
+
+#button {
+    /* background-color: aqua; */
+    size: 500px;
+    color: white;
+    align-items: center;
+    text-align: center;
+    padding: 15px 32px;
+}
+
+#btn-text {
+    background-color: rgb(92, 91, 91);
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+}
+
+#text-clubs {
+    align-items: center;
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-8 {
+    width: 75%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.col-4 {
+    width: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#logo-spec {
+    size: 40px;
+    font-size: 25px;
+}
+
+.container1 {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.logo-btn {
+    color: white;
+    background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(228, 223, 223, 0.19);
+}
+
+.logo-btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(255, 255, 255, 0.19);
+}
+
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+} */

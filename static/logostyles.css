@@ -1,0 +1,19 @@
+.row {
+    display: flex;
+    align-items: left;
+}
+
+.col-1 {
+    width: 75%;
+}
+
+.col-2 {
+    width: 25%;
+    align-items: center;
+}
+
+#logo-spec {
+    height: 10px;
+    width: 10px;
+    object-fit: cover;
+}
