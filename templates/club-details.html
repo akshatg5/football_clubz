@@ -12,7 +12,7 @@
     <div id="text-clubs" class="row">
         <div class="col-8">
             <div class="grid-container">
-                <h2>{{club['club-name']}}</h2>
+                <h2>{{club['clubname']}}</h2>
                 {% if 'country' in club %}
                 <p>{{club['country']}}</p>
                 {% endif %}
@@ -20,7 +20,7 @@
         </div>
         <div class="col-4">
             <button class="logo-btn" id="logo-spec"> 
-                <a href="https://en.wikipedia.org/wiki/{{club['club-name']}} " target="
+                <a href="https://en.wikipedia.org/wiki/{{club['clubname']}} " target="
                 _blank"> <img style="height: 100px; width:100px; object-cover:fit; background-color:white;" src="/static/{{club['logo']}}" alt=""></a>
             </button>
         </div>
