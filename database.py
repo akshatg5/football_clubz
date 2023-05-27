@@ -1,10 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy import text
 import pymysql
-from dotenv import load_dotenv
-load_dotenv()
 import os
-import MySQLdb
 import pymysql.cursors
 import os
 
