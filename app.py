@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify
-from sqlalchemy import text
 from database import engine
 import json
 from database import load_clubs_from_db
