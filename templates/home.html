@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Press+Start+2P&family=Source+Code+Pro&display=swap" rel="stylesheet">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="static\styles.css">
@@ -19,7 +22,7 @@
         <div class="container1">
             <h1 style="text-align: center;">Football Clubz</h1>
             <p style="text-align: center;">
-                Welcome to Football Clubz, your ultimate destination for information on the 10 most famous football clubs worldwide! Whether you're a passionate fan or a curious observer, this website offers a comprehensive overview of these iconic clubs that have left
+                Welcome to Football Clubz, your ultimate destination for information on the most famous football clubs worldwide! Whether you're a passionate fan or a curious observer, this website offers a comprehensive overview of these iconic clubs that have left
                 an indelible mark on the beautiful game. With Football Clubz, you have the power to delve into the rich histories, rivalries, and achievements of these esteemed football institutions. From the legendary Manchester United to the illustrious
                 Real Madrid, we've curated a collection of the most renowned clubs for your exploration.
                 <br> <br> But that's not all,Football Clubz goes beyond providing mere facts and figures. Our unique feature allows you to compare any two football clubs of your choice. Simply enter the names of the two clubs you wish to compare, and
@@ -28,15 +31,24 @@
                 resource for comprehensive football club information and exciting match predictions. Whether you're settling a friendly debate or seeking to enhance your football knowledge, we've got you covered. Join us at Football Clubz and immerse
                 yourself in the captivating world of football's most famous clubs. Explore, compare, and predict.All in one place. Get ready to experience the thrill and excitement of the beautiful game like never before!</p>
         </div>
-        <img id="banner" src="static\football-bg.png" alt="">
-        <h1 style="text-align: center;">Football Clubs: </h1>
-        <div class="container2">
+        <div >
+            <img id="banner" src="static\football-bg.png" alt="">
+        </div>
+
+        <h2 style="text-align: center;">Football Clubs: </h2>
+        <h5 style="text-align: center;">Click to visit football club list: </h5>
+        <div > 
+            <a href="/clubs">
+                <img class="clubs-fc" src="/static/clubs-fc.jpeg" alt="">
+            </a>
+        </div>
+        <!-- <div class="container2">
             <div>
                 {%for club in clubs%} {%include 'club-details.html'%} {%endfor%}
             </div>
-        </div>
+        </div> -->
         <div id="button">
-            <button id="btn-text">Contact Us</button>
+            <button id="btn-text"> <a style="text-decoration: none; color:white;" href="/contactus"> Contact Us</a></button>
         </div>
         <hr>
 </body>

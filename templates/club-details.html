@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
     <title>Document</title>
 </head>
 
@@ -12,7 +13,7 @@
     <div id="text-clubs" class="row">
         <div class="col-8">
             <div class="grid-container">
-                <h2>{{club['clubname']}}</h2>
+                <h4> <a style="text-decoration: none; color:white;" href="/club/{{club['id']}}">{{club['clubname']}}</a></h4>
                 {% if 'country' in club %}
                 <p>{{club['country']}}</p>
                 {% endif %}

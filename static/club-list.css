@@ -104,9 +104,6 @@ p,h5 {
     max-height: 10%;
 }
 
-
-/* .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-} */
+.container2 {
+    color: white;
+}
