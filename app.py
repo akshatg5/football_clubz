@@ -1,7 +1,7 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify,request
 from database import engine
 import json
-from database import load_clubs_from_db,load_club_from_db
+from database import load_clubs_from_db,load_club_from_db,add_interaction_to_db
 
 
 app = Flask(__name__)
@@ -45,6 +45,18 @@ def about_us():
 @app.route('/contactus')
 def contact_us():
     return render_template('contactus.html')
+
+@app.route('/interact')
+def interact():
+    data = request.form
+    add_interaction_to_db(data)
+    return render_template('interact.html')
+
+@app.route('/interact/entry',methods=['post'])
+def interact_to_club():
+    data = request.form
+    add_interaction_to_db(data)
+    return render_template('interaction_result.html',user_entry=data)
 
 if __name__ == "__main__":
     app.run(debug=True)

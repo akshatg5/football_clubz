@@ -38,5 +38,26 @@ def load_club_from_db(id):
         else:
             return rows[0]._asdict()
         
+def add_interaction_to_db(interaction):
+    with engine.connect() as conn:
+        query = text("INSERT INTO interactions (full_name, age, email, phone, favclub, goat, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
+        
+        try:
+            conn.execute(query,
+                         interaction['full_name'],
+                         interaction['age'],
+                         interaction['email'],
+                         interaction['phone'],
+                         interaction['favclub'],
+                         interaction['goat'],
+                         interaction['created_at'],
+                         interaction['updated_at']
+                         )
+            conn.commit()
+        except KeyError as e:
+            print(f"Error: Missing key '{e.args[0]}' in the 'interaction' dictionary.")
+
+
+        
     
 
