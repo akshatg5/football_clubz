@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify,request,url_for,redirect
+from flask import Flask, render_template, jsonify,request,url_for,redirect,make_response
 from database import engine
 import json
 from database import load_clubs_from_db,load_club_from_db
@@ -81,10 +81,14 @@ def polls(p_id):
 
 @app.route('/vote/<p_id>/<option>')
 def vote(p_id,option):
-    polls_df.at[int(p_id),'votes'+str(option)] += 1
-    polls_df.to_csv("polls.csv")
-    poll_details = polls_df.loc[int(p_id)]
-    return render_template('show_poll.html',poll=poll_details)
+    if request.cookies.get(f"votes_{p_id}_cookie") is None:
+        polls_df.at[int(p_id),'votes'+str(option)] += 1
+        polls_df.to_csv("polls.csv")
+        response = make_response(redirect(url_for('polls',p_id=p_id)))
+        response.set_cookie(f"votes_{p_id}_cookie",str(option))
+        return response
+    else:
+        return "Cannot vote more than once!!"
         
 @app.route('/interact')
 def interact():
