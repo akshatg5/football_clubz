@@ -1,0 +1,7 @@
+p_id,poll_question,option1,option2,option3,option4,option5,votes1,votes2,votes3,votes4,votes5
+1,Who is the best Centre Forward?,Erling Haaland, Karim Benzema, Robert Lewandowski,Harry Kane, Kylian Mbappe,21,5,4,5,3
+2, Who is the best Centre Midfielder?,Kevin De Bruyne, Frenkie De Jong, Luka Modric, Jude Bellingham,Toni Kroos,0,0,0,0,0
+3, Who is the best Winger?,Lionel Messi, Cristiano Ronaldo, Mohamed Salah, Neymar Jr., Raheem Sterling,2,2,2,2,2
+4, Who is the best Central Defender? , Virgil van Dijk, Sergio Ramos, Kalidou Koulibaly, Matthijs de Ligt, Aymeric Laporte,0,0,0,0,0
+5, Who is the best Full-back?, Trent Alexander-Arnold, Andrew Robertson, Joshua Kimmich, Dani Carvajal, Jordi Alba,1,2,2,2,4
+6,Who is the best Goalkeeper?, Jan Oblak, Manuel Neuer, Alisson Becker, Ederson, Marc-André ter Stegen,2,2,3,3,5
