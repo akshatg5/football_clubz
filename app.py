@@ -1,7 +1,8 @@
 from flask import Flask, render_template, jsonify,request,url_for,redirect,make_response
 from database import engine
 import json
-from database import load_clubs_from_db,load_club_from_db
+import requests
+from database import load_clubs_from_db,load_club_from_db,add_interaction_to_db
 import pandas as pd
 import os.path
 
@@ -104,7 +105,9 @@ def interact():
 @app.route('/interact/entry',methods=['post'])
 def interact_to_club():
     data = request.form
+    add_interaction_to_db(data)
     return render_template('interaction_result.html',user_entry=data)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

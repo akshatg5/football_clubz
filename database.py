@@ -38,7 +38,19 @@ def load_club_from_db(id):
         else:
             return rows[0]._asdict()
         
-
+def add_interaction_to_db(user_entry):
+    with engine.connect() as conn:
+        query = text(f"INSERT INTO interactions(club_name,best_manager, best_player, best_cf, best_m,best_cb, best_gk) VALUES (:club_name,:best_manager,:best_player,:best_cf,:best_m,:best_cb,:best_gk)")
+        
+        conn.execute(query,{
+            'club_name' : user_entry['club_name'],
+            'best_manager' : user_entry['best_manager'],
+            'best_player' : user_entry['best_player'],
+            'best_cf' : user_entry['best_cf'],
+            'best_m' : user_entry['best_m'],
+            'best_cb': user_entry['best_cb'],
+            'best_gk': user_entry['best_gk']
+        })
 
 
         
