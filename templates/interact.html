@@ -11,7 +11,7 @@
     <!-- <link rel="stylesheet" href="static\club-page.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Press+Start+2P&family=Source+Code+Pro&display=swap" rel="stylesheet">       
-    <link rel="stylesheet" href="static\aboutus.css">
+    <link rel="stylesheet" href="static\interact_form.css">
     <title>Interact</title>
 </head>
 <body>
@@ -39,34 +39,58 @@
 
             <h4>Answer a few questions!!</h4>
             <div> 
-                <p>Which club do you Support:</p> <input style="width:400px;" type="text" name="club_name" id="" >
+                <p>Which club do you Support:</p> <input style="width:400px;" type="text" name="club_name" id="" placeholder="Enter Full Name of the Club!">
             </div>
             <div>
-                <p>Who is the best manager?</p> 
-                <input type="radio" id="paris" name="best_manager" value="Pep">
-                <label for="Pep">Pep Guardiola</label><br>
-                <input type="radio" id="mikel" name="best_manager" value="mikel">
-                <label for="mikel">Carlo Ancelotti</label><br>
-                <input type="radio" id="zidane" name="best_manager" value="zidane">
-                <label for="zidane">Zidane</label><br>
-                <input type="radio" id="saf" name="best_manager" value="saf">
-                <label for="saf">Sir Alex Fergeuson</label><br>
-                <!-- <input style="width:400px;" type="text" name="best_manager" id="" > -->
+                <p>Who is the best manager?</p>
+                <select name="best_manager" method="GET" action="/interact"> 
+                    <!-- {% for manager in managers %}
+                        <option value="{{manager}}" SELECTED>{{manager}}x</option>
+                    {% endfor %} -->
+                    {% for manager in football_managers %}
+                    <option value="{{ manager }}" >{{ manager }}</option>
+                    {% endfor %}
+                </select> 
             </div>
             <div> 
-                <p>Best player according to you:</p> <input style="width:400px;" type="text" name="best_player" id="" >
+                <p>Best player ever according to you:</p> 
+                <select name="best_player" method="GET" action="/interact" id="">
+                    {% for player in best_players%}
+                    <option value="{{player}}">{{player}}</option>
+                    {% endfor%}
+                </select>
             </div>
             <div> 
-                <p>Best Centre Forward according to you:</p> <input style="width:400px;" type="text" name="best_cf" id="" >
+                <p>Best Centre Forward according to you:</p> 
+                <select name="best_cf" method="GET" action="/interact" id="">
+                    {% for best_cf in best_cfs %}
+                    <option value="{{best_cf}}">{{best_cf}}</option>
+                    {% endfor%}
+                </select>
             </div>
             <div> 
-                <p>Best Midfielder according to you:</p> <input style="width:400px;" type="text" name="best_m" id="" >
+                <p>Best Midfielder according to you:</p>
+                <select name="best_m" id="" method="GET" action="/interact">
+                    {%for best_m in best_ms%}
+                    <option value="{{best_m}}">{{best_m}}</option>
+                    {%endfor%}
+                </select>
             </div>
             <div> 
-                <p>Best Centre Back according to you:</p> <input style="width:400px;" type="text" name="best_cb" id="" >
+                <p>Best Centre Back according to you:</p>
+                <select name="best_cb" id="" method="GET" action="/interact">
+                    {%for best_cb in best_cbs%}
+                    <option value="{{best_cb}}">{{best_cb}}</option>
+                    {%endfor%}
+                </select>
             </div>
             <div> 
-                <p>Best Goalkeeper according to you:</p> <input style="width:400px;" type="text" name="best_gk" id="" >
+                <p>Best Goalkeeper according to you:</p>
+                <select name="best_gk" id="" method="GET" action="/interact">
+                    {%for best_gk in best_gks%}
+                    <option value="{{best_gk}}">{{best_gk}}</option>
+                    {%endfor%}
+                </select>
             </div>
             <br>  
             <div>

@@ -40,9 +40,11 @@ def load_club_from_db(id):
         
 def add_interaction_to_db(user_entry):
     with engine.connect() as conn:
-        query = text(f"INSERT INTO interactions(club_name,best_manager, best_player, best_cf, best_m,best_cb, best_gk) VALUES (:club_name,:best_manager,:best_player,:best_cf,:best_m,:best_cb,:best_gk)")
+        query = text(f"INSERT INTO interactions(full_name,age,club_name,best_manager, best_player, best_cf, best_m,best_cb, best_gk) VALUES (:full_name,:age,:club_name,:best_manager,:best_player,:best_cf,:best_m,:best_cb,:best_gk)")
         
         conn.execute(query,{
+            'full_name' : user_entry['full_name'],
+            'age' : user_entry['age'],
             'club_name' : user_entry['club_name'],
             'best_manager' : user_entry['best_manager'],
             'best_player' : user_entry['best_player'],
