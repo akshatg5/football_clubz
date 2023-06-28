@@ -13,11 +13,13 @@ body {
     text-align: center;
   }
   
-
-  
   label {
     color: white;
     font-family: "Source Code Pro", monospace;
+  }
+
+  input {
+    width: 25%;
   }
 
   select {
@@ -72,6 +74,23 @@ body {
     height: 450px;
     width: 100%;
     object-fit: cover;
+  }
+
+  .flex-container1,.flex-container2 {
+    display: flex;
+  }
+
+  .flex-container3 {
+    display: flex;
+  }
+  
+  .flex-container1-child,.flex-container2-child,.flex-container3-child{
+    flex: 1;
+  }
+
+  form {
+    align-items: center;
+    text-align: center;
   }
   
   #button {
