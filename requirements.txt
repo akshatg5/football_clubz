@@ -7,5 +7,4 @@ requests
 matplotlib
 numpy
 seaborn
-io
-base64
+Base64
