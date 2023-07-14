@@ -1,39 +1,44 @@
 body {
-    background-color: black;
+    background-color: #A2FF86;
 }
 
 .blackbg {
-    background-color: black;
+    background-color: #A2FF86;
 }
 
 h1 {
-    color: white;
+    color: #1B6B93;
     font-size: 75px;
     /* font-family: 'Press Start 2P', cursive; */
     font-family: 'Pathway Extreme', sans-serif;
 }
 h2 {
-    color: white;
+    color: #1B6B93;
     font-size: 60px;
     /* font-family: 'Press Start 2P', cursive; */
     font-family: 'Pathway Extreme', sans-serif;
 }
 
 h4 {
-    color: white;
+    color: #1B6B93;
     font-size: 35px;
     font-family: 'Source Code Pro', monospace;
 }
 
 p,h5 {
-    color: white;
+    color: #1B6B93;
+    font-weight: bold;
+
+    font-size: 20px;
     font-family: 'Source Code Pro', monospace;
 }
 
 #banner {
+    padding-top: 10px;
     height: 450px;
     width: 100%;
-    object-fit: cover;
+    object-fit:cover-fit ;
+    background-color: #A2FF86;
 }
 
 #button {
@@ -80,7 +85,7 @@ p,h5 {
 }
 
 .container1 {
-    background-color: black;
+    background-color: #A2FF86;
     max-width: 1000px;
     margin: auto;
 }

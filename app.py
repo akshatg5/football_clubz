@@ -2,9 +2,13 @@ from flask import Flask, render_template, jsonify,request,url_for,redirect,make_
 from database import engine
 import json
 import requests
-from database import load_clubs_from_db,load_club_from_db,add_interaction_to_db
+from database import load_clubs_from_db,load_club_from_db,add_interaction_to_db,load_all_from_interactions
 import pandas as pd
 import os.path
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 
 
 app = Flask(__name__)
@@ -94,6 +98,60 @@ def contact_us():
 @app.route('/interact',methods =['GET'])
 def interact():
     data = request.form
+    
+    football_clubs = [
+    "Real Madrid",
+    "Barcelona",
+    "Manchester United",
+    "Bayern Munich",
+    "Liverpool",
+    "Juventus",
+    "Manchester City",
+    "Paris Saint-Germain",
+    "Chelsea",
+    "Atlético Madrid",
+    "Arsenal",
+    "Tottenham Hotspur",
+    "Borussia Dortmund",
+    "Inter Milan",
+    "AC Milan",
+    "Ajax",
+    "Roma",
+    "Napoli",
+    "Benfica",
+    "Porto",
+    "Sevilla",
+    "Valencia",
+    "RB Leipzig",
+    "Everton",
+    "Leicester City",
+    "Lyon",
+    "Marseille",
+    "Boca Juniors",
+    "River Plate",
+    "Flamengo",
+    "Palmeiras",
+    "Santos",
+    "São Paulo",
+    "Cruzeiro",
+    "Gremio",
+    "Vasco da Gama",
+    "Sporting CP",
+    "Fenerbahce",
+    "Galatasaray",
+    "Besiktas",
+    "Olympiacos",
+    "Panathinaikos",
+    "Celtic",
+    "Rangers",
+    "Anderlecht",
+    "Club Brugge",
+    "Shakhtar Donetsk",
+    "Zenit Saint Petersburg",
+    "CSKA Moscow",
+    "Spartak Moscow"
+]
+    
     football_managers = [
     "Sir Alex Ferguson", 
     "Jose Mourinho", 
@@ -235,6 +293,7 @@ def interact():
 
 
     return render_template('interact.html',
+                           football_clubs = football_clubs,
                            football_managers=football_managers, 
                            best_players = best_players,
                            best_cfs = best_cfs,
@@ -253,6 +312,46 @@ def interact_to_club():
     data = request.form
     add_interaction_to_db(data)
     return render_template('interaction_result.html',user_entry=data)
+
+df_main = load_all_from_interactions()
+# def club_piechart():
+#     clubs = df_main['club_name'].value_counts()
+#     labels = clubs.index.tolist()
+#     values = clubs.values.tolist()
+#     fig,ax = plt.subplots(facecolor = 'none',figsize=(20,18))
+#     colors = sns.color_palette('pastel')
+#     ax.set_title("Club Distribution",fontsize=25)
+#     ax.pie(labels=labels,x=values,colors=colors,autopct= "%1.1f%%",textprops={'fontsize':25})
+#     club_piechart = plt.savefig('static/club_piechart.png')
+#     return club_piechart
+
+import io
+import base64 
+
+def club_piechart2():
+    clubs = df_main['club_name'].value_counts()
+    labels = clubs.index.tolist()
+    values = clubs.values.tolist()
+    fig,ax = plt.subplots(facecolor = 'none',figsize=(20,18))
+    colors = sns.color_palette('pastel')
+    ax.set_title("Club Distribution",fontsize=25)
+    ax.pie(labels=labels,x=values,colors=colors,autopct= "%1.1f%%",textprops={'fontsize':25})
+    fig = plt.gcf()
+    buffer = io.BytesIO()
+    fig.savefig(buffer,format='png')
+    buffer.seek(0)
+    #encoding the PNG image as a base64 string
+    image_png = buffer.getvalue()
+    buffer.close()
+    image_base64 = base64.b64encode(image_png).decode('utf-8')
+    return image_base64
+    
+
+@app.route('/stats',methods=['GET','POST'])
+def stats_interact():
+    user_details = load_all_from_interactions()
+    image_base64 = club_piechart2()
+    return render_template('stats.html',data=user_details,image_base64 = image_base64)
 
 
 if __name__ == "__main__":

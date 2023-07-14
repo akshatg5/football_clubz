@@ -4,3 +4,8 @@ sqlalchemy
 pymysql
 pandas
 requests
+matplotlib
+numpy
+seaborn
+io
+base64

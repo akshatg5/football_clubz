@@ -1,13 +1,13 @@
 body {
-  background-color: black;
+  background-color: #A2FF86;
 }
 
 .blackbg {
-  background-color: black;
+  background-color: #A2FF86;
 }
 
 h4 {
-  color: white;
+  color: #1B6B93;
   font-size: 50px;
   font-family: "Pathway Extreme", sans-serif;
   text-align: center;
@@ -27,7 +27,8 @@ h4 {
 }
 
 p {
-  color: white;
+  color: #1B6B93;
+  font-weight: bold;
   font-family: "Source Code Pro", monospace;
 }
 

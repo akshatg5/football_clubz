@@ -1,26 +1,27 @@
 body {
-    background-color: black;
+    background-color: #A2FF86;
   }
   
   .blackbg {
-    background-color: black;
+    background-color: #A2FF86;
   }
   
   h4 {
-    color: white;
+    color: #1B6B93;
     font-size: 50px;
     font-family: "Pathway Extreme", sans-serif;
     text-align: center;
   }
   
   label {
-    color: white;
+    color: #1B6B93;
     font-family: "Source Code Pro", monospace;
   }
 
   input {
     width: 25%;
   }
+  
 
   select {
     width: 200px;
@@ -66,7 +67,8 @@ body {
   }
   
   p {
-    color: white;
+    color: #1B6B93;
+    font-weight: bold;
     font-family: "Source Code Pro", monospace;
   }
   
@@ -140,3 +142,11 @@ body {
     max-width: 75%;
   }
   
+  .submit-btn {
+    background-color: #1B6B93;
+    color: white;
+    padding: .8%;
+    width: 18%;
+    font-family: "Source Code Pro", monospace;
+    font-size: 22px;
+  }

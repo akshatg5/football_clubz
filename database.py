@@ -4,6 +4,7 @@ import pymysql
 import os
 import pymysql.cursors
 import os
+import pandas as pd
 
 db_connection_string = os.environ.get('FC_DETAILS')
 
@@ -53,6 +54,25 @@ def add_interaction_to_db(user_entry):
             'best_cb': user_entry['best_cb'],
             'best_gk': user_entry['best_gk']
         })
+        
+def load_all_from_interactions():
+    query = "select * from interactions"
+    df = pd.read_sql(query,con=engine)
+    return df
+    # with engine.connect() as conn:        
+    #     stats = conn.execute(text("select * from interactions"))
+        
+    # df = pd.DataFrame(stats.fetchall(),columns=stats.keys())
+    # return df
+
+# def load_clubs_from_db():
+#     with engine.connect() as conn :
+#         result = conn.execute(text("select * from clubs"))
+    
+#     club_details = []
+#     for row in result.all():
+#         club_details.append(row._asdict())
+#     return club_details
 
 
         

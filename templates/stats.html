@@ -21,7 +21,7 @@
             background-color: #A2FF86;
           }
           
-          h4 {
+          h1,h4 {
             color: #1B6B93;
             font-size: 50px;
             font-family: "Pathway Extreme", sans-serif;
@@ -108,45 +108,32 @@
             max-width: 75%;
           }
           
+          .graph{
+            height: 50%;
+            width: 50%;
+            color: black;
+            background-color: transparent;
+          }
     </style>
     <title>Interact</title>
 </head>
 <body>
     {% include 'navbar.html'%}
     <div class="backbg" >
-        <h4>Give some insights about the kind of Football fan you are!</h4>
         <div class="container1">
             <!-- <div >
                 <img id="banner" src="static\football-bg.png" alt="">
             </div> -->
         </div>
         <div>
-            <h2>Full Name:</h2>
-            <p>{{user_entry['full_name']}}</p>
-            <h2>Age:</h2>
-            <p>{{user_entry['age']}}</p>
-            <h2>Email:</h2>
-            <p>{{user_entry['email']}}</p>
-            <h2>Phone No.:</h2>
-            <p>{{user_entry['phone']}}</p>
-            <h2>Favourite club:</h2>
-            <p>{{user_entry['favclub']}}</p>
+            <h1>User Graphs</h1>
+            <!-- <div >
+                   <img class="graph" src="static\club_piechart.png" alt="">
+            </div> -->
 
-            <h4>Answers:</h4>
-            <h2>Favourite Club:</h2>
-            <p>{{(user_entry['club_name'])}}</p>
-            <h2>Favourite Manager:</h2>
-            <p>{{user_entry['best_manager']}}</p>
-            <h2>Best Player according to you:</h2>
-            <p>{{user_entry['best_player']}}</p>
-            <h2>Best Centre Forward according to you:</h2>
-            <p>{{user_entry['best_cf']}}</p>
-            <h2>Best Midfielder according to you:</h2>
-            <p>{{user_entry['best_m']}}</p>
-            <h2>Best Centre Back according to you:</h2>
-            <p>{{user_entry['best_cb']}}</p>
-            <h2>Best Goalkeeper according to you:</h2>
-            <p>{{user_entry['best_gk']}}</p>
+            <div>
+                <img class="graph" src="data:image/png;base64,{{ image_base64 }}" alt="PLOT">
+            </div>
         </div>
         <div id="button">
             <button id="btn-text"> <a style="text-decoration: none; color:white;" href="/contactus"> Contact Us</a></button>

@@ -39,7 +39,12 @@
 
             <h4>Answer a few questions!!</h4>
             <div> 
-                <p>Which club do you Support:</p> <input style="width:400px;" type="text" name="club_name" id="" placeholder="Enter Full Name of the Club!">
+                <p>Which club do you Support:</p> 
+                <select name="club_name" method = "GET" action="/interact">
+                    {% for club in football_clubs %}
+                    <option value="{{club}}">{{club}}</option>
+                    {%endfor%}
+                </select>
             </div>
 
             <div class="flex-container1" >
@@ -101,8 +106,8 @@
                 </div>
                 <div></div>
             <br>  
-            <div>
-                <a href="/interact/entry"> <input type="submit" id=""> </a>
+            <div >
+                <a  href="/interact/entry"> <input class="submit-btn" type="submit" id=""> </a>
             </div>
         </form>
         <div id="button">
